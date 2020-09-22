@@ -1,4 +1,7 @@
+import open from 'open'
+
 export default {
+  srcDir: 'app/',
   // Global page headers (https://go.nuxtjs.dev/config-head)
   head: {
     title: 'toridoll_copy',
@@ -40,5 +43,11 @@ export default {
 
   // Build Configuration (https://go.nuxtjs.dev/config-build)
   build: {
+  },
+
+  hooks: {
+    listen (server, { host, port }) {
+      open(`http://${host}:${port}`)
+    }
   }
 }
